@@ -1,4 +1,7 @@
 import React from "react";
+import BlobCastClient from '../../js/blobcastclient';
+import BlobToChoices from '../../js/gamescontroller';
+
 
 class Viewer extends React.Component {
   render() {

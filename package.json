@@ -1,31 +1,28 @@
 {
   "name": "twitch-extension-starter",
   "version": "1.1.0",
-  "description":
-    "This will get you started developing Twitch extensions using React!",
+  "description": "This will get you started developing Twitch extensions using React!",
   "main": "src/index.js",
   "author": "Martin Beierling <mbeierling@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start":
-      "concurrently \"yarn watch:viewer\" \"yarn watch:config\" \"yarn watch:live_config\" \"yarn dev-server\"",
+    "start": "concurrently \"yarn watch:viewer\" \"yarn watch:config\" \"yarn watch:live_config\" \"yarn dev-server\"",
     "dev-server": "node server.js",
     "watch:viewer": "parcel watch src/viewer.html -d dist/viewer --public-url ./",
     "watch:config": "parcel watch src/config.html -d dist/config --public-url ./",
     "watch:live_config": "parcel watch src/live_config.html -d dist/live_config --public-url ./",
-    "build":
-      "npm run build:viewer && npm run build:config && npm run build:live_config",
+    "build": "npm run build:viewer && npm run build:config && npm run build:live_config",
     "build:viewer": "parcel build src/viewer.html -d dist/viewer --no-minify --public-url ./",
     "build:config": "parcel build src/config.html -d dist/config --no-minify --public-url ./",
-    "build:live_config":
-      "parcel build src/live_config.html -d dist/live_config --no-minify --public-url ./",
+    "build:live_config": "parcel build src/live_config.html -d dist/live_config --no-minify --public-url ./",
     "zip": "cross-env bestzip dist_zip/$npm_package_version.zip dist/*",
     "package": "npm run build && npm run zip"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "socket.io": "0.9.7"
   },
   "devDependencies": {
     "babel-eslint": "7.2.3",
